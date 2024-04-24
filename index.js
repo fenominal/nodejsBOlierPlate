@@ -4,6 +4,7 @@ import  dotenv from 'dotenv';
 import {languageHandler} from './middelware/useMiddelware.js'
 
 import {Port} from './variables/constVariable.js'
+import * as resHandler from './helper/responseHandler.js'
 // Env file file
 dotenv.config({ path: "./.env" });
 import connectDB from './model/connection.js'
@@ -23,7 +24,8 @@ app.listen(Port);
 */
 app.get("/", (req, res) => {
   console.log("languageHandler",req.validationText.test_message);
-    res.send(req.validationText.test_message);
+    // res.send(req.validationText.test_message);
+    resHandler.successHandler(res,req.validationText.test_message,"result")
   });
 
-  app.use("/", authRouter);
+  app.use("/auth", authRouter);
