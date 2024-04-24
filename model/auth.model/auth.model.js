@@ -10,12 +10,34 @@ const usersAuthModel = new mongoose.Schema({
     phone_number: { type: Number},
     country_code: { type: String},
     country: { type: String },
-    language: { type: String, default: english },
+    language: { type: String, default: "english" },
     registartion_date: { type: Date, default: Date.now()},
     token: { type: String },
     UserImage: {type: String},
 });
 
-const customerModal = mongoose.model("customer_data", customerSchema);
+const customerModal = mongoose.model("customer_data", usersAuthModel);
 
-module.exports={customerModal}
+
+export function find(data, column) {
+    let val = userModel.find(data, column);
+    return val;
+  }
+  
+  export function deleteOne(data) {
+    let val = userModel.deleteOne(data);
+    return val;
+  }
+  
+  export function updateOne(data, set) {
+    let val = userModel.updateOne(data, set);
+    return val;
+  }
+  
+  export function insertOne(data) {
+    let val = userModel.create(data);
+    return val;
+  }
+  
+
+// module.exports={customerModal}

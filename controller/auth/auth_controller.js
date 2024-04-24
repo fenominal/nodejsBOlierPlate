@@ -1,3 +1,5 @@
+import * as UserModel from '../../model/auth.model/auth.model.js'
+
 
 /**
  * Controller Function for Signup.
@@ -5,6 +7,7 @@
  * @param (request and response)
  */
 export const signup = async (req, res) => {
+
 res.send("hhhh")
 }
 
