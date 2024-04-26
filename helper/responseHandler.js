@@ -33,6 +33,5 @@ export const failed = (res, error = null) => {
         success: false,
         Notification: [error],
       });
-    }
-  
+    }  
   };

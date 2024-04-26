@@ -19,6 +19,8 @@ app.use(languageHandler)
 
 app.listen(Port);
 
+app.use(express.static('public'))
+
 /**
  * test router.
 */
