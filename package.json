@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "create": "node makeCred.js",
+    "create": "cd helper && node makeCred.js",
     "start": "nodemon index.js"
   },
   "author": "Patel Ayush",
