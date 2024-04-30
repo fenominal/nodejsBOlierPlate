@@ -17,18 +17,21 @@ const storage = multer.diskStorage({
     }
   },
   filename: function (req, file, cb) {
-    // console.log("reqs in file :-", file);
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     cb(null, file.fieldname + "-" + file.originalname);
   },
 });
 
 const upload = multer({ storage: storage });
 
-// Common function to handle file uploads
+/**
+ * helpr function to  upload the files and return responce with data.
+ * @author Patel Ayush
+ * @param (request and response)
+ */
 export function uploadFile(req, res, next) {
+  console.log("hhhh");
   upload.single("file")(req, res, (err) => {
-    console.log(err);
+    console.log("error :-",err);
   });
   next();
 }

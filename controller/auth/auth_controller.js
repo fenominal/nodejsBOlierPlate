@@ -48,7 +48,11 @@ export const signIn = async (req, res) => {
   }
 };
 
-
+/**
+ * Controller Function for upload file.
+ * @author Patel Ayush
+ * @param (request and response)
+ */
 export const upload_file =async (req, res)=>{
   try {
     resHandler.successHandler(res, true, "");    
